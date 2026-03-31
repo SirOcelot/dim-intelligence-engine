@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dim-intelligence-engine"
+version = "0.2.0"
+description = "DIM export enrichment engine for markdown knowledge packs and Destiny 2 build intelligence."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "pandas>=2.0",
+  "pyyaml>=6.0",
+]
+
+[project.scripts]
+dim-intel = "dim_enrichment_engine.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
